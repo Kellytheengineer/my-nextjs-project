@@ -19,7 +19,7 @@ export default function AboutPage() {
               Hello! I'm Kelly, a Junior Full Stack Developer specializing in SQL, JavaScript, HTML, CSS, and Python. I'm actively developing my skills and building hands-on experience with modern frameworks, which you can explore in my GitHub portfolio. With a background in Cloud Computing (AWS, VMware Cloud, Azure) and Data Center Virtualization from my previous role as a Digital Solutions Engineer, I bring a unique blend of technical and business expertise to my work. I also hold a Master's in Engineering Technology and Business Management from the University of Leeds.
             </p>
             <p>
-              In addition to coding, I am the host of the award-winning <strong>"Women In STEM Podcast,"</strong> a platform dedicated to amplifying the voices of inspiring women in tech, from CEOs to scientists. The podcast features expert insights, career tips, and motivational stories to empower others, making it a valuable resource for anyone passionate about diversity and inclusion in STEM.
+              In addition to coding, I am the host of the award-winning "Women In STEM Podcast", a platform dedicated to amplifying the voices of inspiring women in tech, from CEOs to scientists. The podcast features expert insights, career tips, and motivational stories to empower others, making it a valuable resource for anyone passionate about diversity and inclusion in STEM.
             </p>
             
             <div>
@@ -50,6 +50,20 @@ export default function AboutPage() {
                   <h4 className="font-bold">University of Kent</h4>
                   <p className="italic">BEng in Electronic Communication Engineering with Honors (IET accredited) (2015-2019)</p>
                   <p>Relevant modules: Machine Learning, Mathematics, Programming, Digital Technologies</p>
+                </li>
+                <li>
+                <h4 className="font-bold">VMware</h4>
+                <p className="italic">
+                  <a
+                    href="https://www.credly.com/badges/a9cea98c-f939-4074-95a9-43bed6a27d64/public_url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 underline"
+                  >
+                    VMware Certified Technical Associate - Data Center Virtualization (2022)
+                  </a>
+                </p>
+                <p>Relevant modules: Virtual Networking, Virtual Machines, vSAN, vSphere, Vcenter</p>
                 </li>
                 <li>
                   <h4 className="font-bold">School of Code</h4>
