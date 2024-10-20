@@ -6,7 +6,15 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  techStack: string;
+  github?: string;
+  demo?: string;
+}
+
+const projects: Project[] = [
   {
     title: "Football Meetup Website for Parents",
     description: "Developed a full-stack application in one week as part of a collaborative group project. This website allows parents to organize and join football meetups for their children. It features user authentication, event creation and management, and real-time updates. The project showcases my ability to work in a team environment and deliver a functional product within a tight deadline.",
@@ -45,7 +53,11 @@ const projects = [
   }
 ];
 
-const ProjectCard = ({ project }) => {
+interface ProjectCardProps {
+  project: Project;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (

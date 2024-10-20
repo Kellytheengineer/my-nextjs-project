@@ -2,8 +2,6 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Github, Linkedin, Mail } from "lucide-react"
-import Link from "next/link"
 import { useState, useEffect } from "react"
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
@@ -148,11 +146,11 @@ export default function Home() {
                 Women In STEM Podcast
               </h2>
               <div className="max-w-2xl mx-auto text-center">
-                <p className="text-white mb-6 text-xl">
-                  Award-Winning Podcast 🌟<br />
-                  Amplifying the voices of women in STEM with powerful stories and expert insights ✨<br />
-                  Tune in every week for career tips and inspiring discussions 🔬<br />
-                  Don't miss out on the voices shaping the future of STEM!
+              <p className="text-white mb-6 text-xl">
+                Award-Winning Podcast 🌟<br />
+                Amplifying the voices of women in STEM with powerful stories and expert insights ✨<br />
+                Tune in every week for career tips and inspiring discussions 🔬<br />
+                Don&apos;t miss out on the voices shaping the future of STEM!
                 </p>
                 <Button 
                   className="bg-white text-[#d99ae3] hover:bg-[#f0d4f5] text-lg"

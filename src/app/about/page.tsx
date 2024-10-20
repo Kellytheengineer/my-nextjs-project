@@ -16,10 +16,10 @@ export default function AboutPage() {
           </CardHeader>
           <CardContent className="space-y-6">
             <p>
-              Hello! I'm Kelly, a Junior Full Stack Developer specializing in SQL, JavaScript, HTML, CSS, and Python. I'm actively developing my skills and building hands-on experience with modern frameworks, which you can explore in my GitHub portfolio. With a background in Cloud Computing (AWS, VMware Cloud, Azure) and Data Center Virtualization from my previous role as a Digital Solutions Engineer, I bring a unique blend of technical and business expertise to my work. I also hold a Master's in Engineering Technology and Business Management from the University of Leeds.
+              Hello! I&apos;m Kelly, a Junior Full Stack Developer specializing in SQL, JavaScript, HTML, CSS, and Python. I&apos;m actively developing my skills and building hands-on experience with modern frameworks, which you can explore in my GitHub portfolio. With a background in Cloud Computing (AWS, VMware Cloud, Azure) and Data Center Virtualization from my previous role as a Digital Solutions Engineer, I bring a unique blend of technical and business expertise to my work. I also hold a Master&apos;s in Engineering Technology and Business Management from the University of Leeds.
             </p>
             <p>
-              In addition to coding, I am the host of the award-winning "Women In STEM Podcast", a platform dedicated to amplifying the voices of inspiring women in tech, from CEOs to scientists. The podcast features expert insights, career tips, and motivational stories to empower others, making it a valuable resource for anyone passionate about diversity and inclusion in STEM.
+              In addition to coding, I am the host of the award-winning &quot;Women In STEM Podcast&quot;, a platform dedicated to amplifying the voices of inspiring women in tech, from CEOs to scientists. The podcast features expert insights, career tips, and motivational stories to empower others, making it a valuable resource for anyone passionate about diversity and inclusion in STEM.
             </p>
             
             <div>
@@ -35,7 +35,7 @@ export default function AboutPage() {
             </div>
             
             <p>
-              I'm passionate about creating efficient and scalable applications, with a keen interest in cloud technologies. My diverse experience allows me to collaborate effectively across teams and communicate technical concepts clearly. I'm eager to apply my growing full stack skills and cloud knowledge to help a company innovate and grow.
+              I&apos;m passionate about creating efficient and scalable applications, with a keen interest in cloud technologies. My diverse experience allows me to collaborate effectively across teams and communicate technical concepts clearly. I&apos;m eager to apply my growing full stack skills and cloud knowledge to help a company innovate and grow.
             </p>
             
             <div>
