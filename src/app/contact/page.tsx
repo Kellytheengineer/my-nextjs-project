@@ -26,7 +26,7 @@ export default function ContactPage(): JSX.Element {
   const form = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
-    emailjs.init("jt6KXX71FOEpeeEt-");
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "");
   }, []);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -38,7 +38,11 @@ export default function ContactPage(): JSX.Element {
     e.preventDefault();
 
     if (form.current) {
-      emailjs.sendForm('service_5iuvj4s', 'template_1wp3pcn', form.current)
+      emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+        form.current
+      )
         .then((result) => {
           console.log('Email successfully sent!', result.text);
           alert('Message sent successfully!');
