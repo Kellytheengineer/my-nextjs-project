@@ -107,9 +107,9 @@ const ProjectsPage: React.FC = () => {
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">My Projects</h1>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.div
-              key={project.title}  // Use a unique identifier
+              key={project.title}  // Using project title as a unique key
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -124,3 +124,4 @@ const ProjectsPage: React.FC = () => {
 };
 
 export default ProjectsPage;
+
