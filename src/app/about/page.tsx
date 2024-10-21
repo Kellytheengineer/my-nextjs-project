@@ -1,16 +1,16 @@
 'use client'
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import Link from "next/link"
-import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-export default function AboutPage() {
+const AboutPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#d99ae3] to-[#491e6b] py-12">
+    <div className="min-h-screen bg-gray-100 py-12">
       <main className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-white mb-8 text-center">About Me</h1>
-        <Card className="mb-8">
+        <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">About Me</h1>
+        <Card className="mb-8 bg-white">
           <CardHeader>
             <CardTitle className="text-3xl">My Journey</CardTitle>
           </CardHeader>
@@ -52,18 +52,18 @@ export default function AboutPage() {
                   <p>Relevant modules: Machine Learning, Mathematics, Programming, Digital Technologies</p>
                 </li>
                 <li>
-                <h4 className="font-bold">VMware</h4>
-                <p className="italic">
-                  <a
-                    href="https://www.credly.com/badges/a9cea98c-f939-4074-95a9-43bed6a27d64/public_url"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 underline"
-                  >
-                    VMware Certified Technical Associate - Data Center Virtualization (2022)
-                  </a>
-                </p>
-                <p>Relevant modules: Virtual Networking, Virtual Machines, vSAN, vSphere, Vcenter</p>
+                  <h4 className="font-bold">VMware</h4>
+                  <p className="italic">
+                    <a
+                      href="https://www.credly.com/badges/a9cea98c-f939-4074-95a9-43bed6a27d64/public_url"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 underline"
+                    >
+                      VMware Certified Technical Associate - Data Center Virtualization (2022)
+                    </a>
+                  </p>
+                  <p>Relevant modules: Virtual Networking, Virtual Machines, vSAN, vSphere, Vcenter</p>
                 </li>
                 <li>
                   <h4 className="font-bold">School of Code</h4>
@@ -86,5 +86,7 @@ export default function AboutPage() {
         </Card>
       </main>
     </div>
-  )
-}
+  );
+};
+
+export default AboutPage;

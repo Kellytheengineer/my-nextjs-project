@@ -15,7 +15,7 @@ interface FormData {
   reply_to: string;
 }
 
-export default function ContactPage(): JSX.Element {
+const ContactPage: React.FC = (): JSX.Element => {
   const [formData, setFormData] = useState<FormData>({
     from_name: '',
     to_name: 'Recipient',
@@ -23,18 +23,18 @@ export default function ContactPage(): JSX.Element {
     reply_to: ''
   });
 
-  const form = useRef<HTMLFormElement>(null);
+  const form = useRef<HTMLFormElement | null>(null);
 
   useEffect(() => {
     emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "");
   }, []);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
 
     if (form.current) {
@@ -55,10 +55,10 @@ export default function ContactPage(): JSX.Element {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#d99ae3] to-[#491e6b] py-12">
+    <div className="min-h-screen bg-gray-100 py-12">
       <main className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-white mb-8 text-center">Contact Me</h1>
-        <Card className="max-w-md mx-auto">
+        <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Contact Me</h1>
+        <Card className="max-w-md mx-auto bg-white">
           <CardContent className="p-6">
             <form ref={form} className="space-y-4" onSubmit={handleSubmit}>
               <div>
@@ -70,6 +70,7 @@ export default function ContactPage(): JSX.Element {
                   placeholder="Your Name" 
                   value={formData.from_name} 
                   onChange={handleChange} 
+                  required // Marking as required for better form validation
                 />
               </div>
               <div>
@@ -81,6 +82,7 @@ export default function ContactPage(): JSX.Element {
                   placeholder="your@email.com" 
                   value={formData.reply_to} 
                   onChange={handleChange} 
+                  required // Marking as required for better form validation
                 />
               </div>
               <div>
@@ -91,6 +93,7 @@ export default function ContactPage(): JSX.Element {
                   placeholder="Your message here..." 
                   value={formData.message} 
                   onChange={handleChange} 
+                  required // Marking as required for better form validation
                 />
               </div>
               <Input 
@@ -109,4 +112,4 @@ export default function ContactPage(): JSX.Element {
   )
 }
 
-
+export default ContactPage;

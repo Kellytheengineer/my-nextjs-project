@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 interface Project {
   title: string;
@@ -58,19 +58,24 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+
+  const toggleExpand = useCallback(() => {
+    setIsExpanded(prev => !prev);
+  }, []);
 
   return (
-    <Card className="h-full flex flex-col">
-      <CardContent className="p-6 bg-white bg-opacity-80 backdrop-blur-lg flex flex-col flex-grow">
-        <h2 className="text-2xl font-bold mb-4">{project.title}</h2>
+    <Card className="h-full flex flex-col rounded-lg shadow-md">
+      <CardContent className="p-6 bg-white flex flex-col flex-grow rounded-lg">
+        <h2 className="text-2xl font-bold mb-4 text-gray-800">{project.title}</h2>
         <p className="text-gray-600 mb-4 flex-grow">
           {isExpanded ? project.description : `${project.description.slice(0, 100)}...`}
         </p>
         <Button 
           variant="link" 
-          onClick={() => setIsExpanded(!isExpanded)} 
-          className="mb-4 p-0 h-auto font-normal"
+          onClick={toggleExpand} 
+          className="mb-4 p-0 h-auto font-normal text-blue-600"
+          aria-label={isExpanded ? "Read less" : "Read more"}
         >
           {isExpanded ? "Read Less" : "Read More"}
         </Button>
@@ -96,18 +101,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   );
 };
 
-export default function ProjectsPage() {
+const ProjectsPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#d99ae3] to-[#491e6b] py-12">
+    <div className="min-h-screen bg-gray-100 py-12">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-white mb-8 text-center">My Projects</h1>
+        <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">My Projects</h1>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: Math.min(index * 0.1, 0.5) }}
+              key={project.title}  // Use a unique identifier
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
             >
               <ProjectCard project={project} />
             </motion.div>
@@ -115,5 +120,7 @@ export default function ProjectsPage() {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default ProjectsPage;

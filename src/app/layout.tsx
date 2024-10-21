@@ -1,61 +1,63 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import Link from 'next/link'
-import { Github, Linkedin, Mail } from "lucide-react"
+// Importing global styles and fonts
+import './globals.css';
+import { Roboto } from 'next/font/google';
+import Link from 'next/link';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
-const inter = Inter({ subsets: ['latin'] })
+// Configuring Roboto font with specified weights and subsets
+const roboto = Roboto({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+// Defining the props type for the RootLayout component
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+// The RootLayout component to structure the application layout
+export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
-        <header className="sticky top-0 z-40 w-full border-b bg-[#d99ae3]">
-          <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-            <div className="flex gap-6 md:gap-10">
-              <Link href="/" className="flex items-center space-x-2">
-                <span className="inline-block font-bold text-white text-xl">Home</span>
-              </Link>
-            </div>
-            <div className="flex flex-1 items-center justify-end space-x-4">
-              <nav className="flex items-center space-x-4">
-                {['About', 'Projects', 'Podcast','CV', 'Contact'].map((item) => (
-                  <Link key={item} href={`/${item.toLowerCase()}`} className="text-lg font-medium text-white hover:underline underline-offset-4">
-                    {item}
-                  </Link>
-                ))}
-              </nav>
-            </div>
+      <body className={`${roboto.className} flex flex-col min-h-screen bg-gray-100`}>
+        <header className="sticky top-0 z-40 w-full border-b bg-white shadow-sm">
+          <div className="container mx-auto px-4 flex h-16 items-center justify-between">
+            <Link href="/" className="flex items-center space-x-2">
+              <span className="inline-block font-bold text-gray-800 text-lg md:text-xl">Home</span>
+            </Link>
+            <nav className="flex items-center space-x-2 md:space-x-4">
+              {['About', 'Projects', 'Podcast', 'CV', 'Contact'].map((item) => (
+                <Link
+                  key={item}
+                  href={`/${item.toLowerCase()}`}
+                  className="text-sm md:text-lg font-medium text-gray-600 hover:text-gray-800 hover:underline underline-offset-4"
+                >
+                  {item}
+                </Link>
+              ))}
+            </nav>
           </div>
         </header>
         <main className="flex-grow">{children}</main>
-        <footer className="border-t border-white bg-[#d99ae3]">
-          <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
-            <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-              <p className="text-center text-sm leading-loose text-white md:text-left">
-                © 2025 Kelly Princess Shungu. All rights reserved.
-              </p>
-            </div>
-            <div className="flex items-center space-x-4">
-              {[ 
-                { Icon: Github, href: "https://github.com/Kellytheengineer", name: "GitHub" }, 
-                { Icon: Linkedin, href: "https://www.linkedin.com/in/kelly-ann-shungu/", name: "LinkedIn" }, 
-                { Icon: Mail, href: "mailto:kellyshungu@gmail.com", name: "Email" }
-              ].map(({ Icon, href, name }, index) => (
-                <div key={index} className="transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3">
-                  <a href={href} className="text-white hover:text-[#f0d4f5]" target="_blank" rel="noopener noreferrer">
-                    <Icon className="h-6 w-6" />
-                    <span className="sr-only">{name}</span>
-                  </a>
-                </div>
-              ))}
+        <footer className="bg-white text-gray-600 py-4 text-center shadow-inner">
+          <div className="container mx-auto px-4 flex flex-col items-center space-y-2">
+            <p className="text-sm md:text-base">&copy; 2024 Kelly Princess Shungu. All rights reserved.</p>
+            <div className="flex space-x-4">
+              <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <Github className="w-5 h-5 md:w-6 md:h-6" />
+              </Link>
+              <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-5 h-5 md:w-6 md:h-6" />
+              </Link>
+              <Link href="mailto:kelly@example.com">
+                <Mail className="w-5 h-5 md:w-6 md:h-6" />
+              </Link>
             </div>
           </div>
         </footer>
       </body>
     </html>
-  )
+  );
 }
+
