@@ -44,15 +44,15 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
           <div className="container mx-auto px-4 flex flex-col items-center space-y-2">
             <p className="text-sm md:text-base">&copy; 2024 Kelly Princess Shungu. All rights reserved.</p>
             <div className="flex space-x-4">
-              <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Kellytheengineer" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5 md:w-6 md:h-6" />
-              </Link>
-              <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              </a>
+              <a href="https://www.linkedin.com/in/kelly-ann-shungu/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-5 h-5 md:w-6 md:h-6" />
-              </Link>
-              <Link href="mailto:kelly@example.com">
+              </a>
+              <a href="mailto:kellyshungu@gmail.com">
                 <Mail className="w-5 h-5 md:w-6 md:h-6" />
-              </Link>
+              </a>
             </div>
           </div>
         </footer>
