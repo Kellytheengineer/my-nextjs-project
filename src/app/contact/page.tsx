@@ -1,12 +1,13 @@
 'use client'
 
 import React, { useState, useRef, useEffect, FormEvent, ChangeEvent } from 'react';
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { motion } from "framer-motion";
 import emailjs from '@emailjs/browser';
+import { FaLinkedin, FaGithub, FaSpotify } from 'react-icons/fa';  // Import icons
 
 interface FormData {
   from_name: string;
@@ -70,7 +71,7 @@ const ContactPage: React.FC = (): JSX.Element => {
                   placeholder="Your Name" 
                   value={formData.from_name} 
                   onChange={handleChange} 
-                  required // Marking as required for better form validation
+                  required 
                 />
               </div>
               <div>
@@ -82,7 +83,7 @@ const ContactPage: React.FC = (): JSX.Element => {
                   placeholder="your@email.com" 
                   value={formData.reply_to} 
                   onChange={handleChange} 
-                  required // Marking as required for better form validation
+                  required 
                 />
               </div>
               <div>
@@ -93,7 +94,7 @@ const ContactPage: React.FC = (): JSX.Element => {
                   placeholder="Your message here..." 
                   value={formData.message} 
                   onChange={handleChange} 
-                  required // Marking as required for better form validation
+                  required 
                 />
               </div>
               <Input 
@@ -105,6 +106,53 @@ const ContactPage: React.FC = (): JSX.Element => {
                 <Button type="submit" className="w-full">Send Message</Button>
               </motion.div>
             </form>
+
+            {/* Social Media Links Section */}
+            <div className="mt-8 text-center">
+              <h2 className="text-1xl font-semibold text-gray-800 mb-4">Connect with me on Social Media</h2>
+              <div className="flex justify-center space-x-8">
+                {/* LinkedIn Icon */}
+                <a 
+                  href="https://www.linkedin.com/in/your-profile" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-blue-700 text-4xl"
+                  title="LinkedIn"
+                >
+                  <FaLinkedin />
+                </a>
+                {/* GitHub Icon */}
+                <a 
+                  href="https://github.com/your-profile" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-900 text-4xl"
+                  title="GitHub"
+                >
+                  <FaGithub />
+                </a>
+                {/* Women In STEM Podcast LinkedIn */}
+                <a 
+                  href="https://www.linkedin.com/company/women-in-stem-podcast/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-blue-600 text-4xl"
+                  title="Women In STEM Podcast"
+                >
+                  <FaLinkedin />
+                </a>
+                {/* Podcast Link */}
+                <a 
+                  href="https://rss.com/podcasts/womeninstem/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-green-500 text-4xl"
+                  title="Podcast"
+                >
+                  <FaSpotify />
+                </a>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </main>

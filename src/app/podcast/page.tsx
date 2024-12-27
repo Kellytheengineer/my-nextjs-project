@@ -42,24 +42,71 @@ const PodcastPage: React.FC = (): JSX.Element => {
                 </li>
               ))}
             </ul>
-            <h3 className="text-xl font-bold mb-2">Listen on:</h3>
-            <div className="flex flex-col space-y-4 mb-4">
-              <Button asChild className="w-64"> 
-                <Link href="https://rss.com/podcasts/womeninstem/" target="_blank" rel="noopener noreferrer">Listen on RSS</Link>
-              </Button>
-              <Button asChild className="w-64"> 
-                <Link href="https://open.spotify.com/show/4KwRgwcYybTjrvKf0ykRuP" target="_blank" rel="noopener noreferrer">Listen on Spotify</Link>
-              </Button>
-              <Button asChild className="w-64"> 
-                <Link href="https://music.amazon.com/podcasts/29351512-ca78-4380-9cb6-ee7a422f11b3/women-in-stem-podcast" target="_blank" rel="noopener noreferrer">Listen on Amazon Music</Link>
-              </Button>
-              <Button asChild className="w-64"> 
-                <Link href="https://podcasts.apple.com/gb/podcast/welcome-to-the-women-in-stem-podcast/id1562509950?i=1000516589931" target="_blank" rel="noopener noreferrer">Listen on Apple Podcasts</Link>
-              </Button>
-              <Button asChild className="w-64"> 
-                <Link href="https://www.linkedin.com/company/women-in-stem-podcast/" target="_blank" rel="noopener noreferrer">Follow on LinkedIn</Link>
-              </Button>
-            </div>
+            <section id="listen" className="py-8 md:py-16 mt-6"> {/* Adjusted mt-12 to mt-6 */}
+              <h3 className="text-xl font-bold mb-2">Listen on:</h3> {/* Same classes as "Recommended Episodes" */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <Button asChild className="w-full">
+                  <Link
+                    href="https://rss.com/podcasts/womeninstem/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center bg-red-500 text-white py-2 px-4 rounded-lg shadow-md"
+                  >
+                    Listen on RSS
+                  </Link>
+                </Button>
+                <Button asChild className="w-full">
+                  <Link
+                    href="https://open.spotify.com/show/4KwRgwcYybTjrvKf0ykRuP"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center bg-green-500 text-white py-2 px-4 rounded-lg shadow-md"
+                  >
+                    Listen on Spotify
+                  </Link>
+                </Button>
+                <Button asChild className="w-full">
+                  <Link
+                    href="https://music.amazon.com/podcasts/29351512-ca78-4380-9cb6-ee7a422f11b3/women-in-stem-podcast"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center bg-yellow-500 text-white py-2 px-4 rounded-lg shadow-md"
+                  >
+                    Listen on Amazon Music
+                  </Link>
+                </Button>
+                <Button asChild className="w-full">
+                  <Link
+                    href="https://podcasts.apple.com/gb/podcast/welcome-to-the-women-in-stem-podcast/id1562509950?i=1000516589931"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center bg-grey-400 text-white py-2 px-4 rounded-lg shadow-md"
+                  >
+                    Listen on Apple Podcasts
+                  </Link>
+                </Button>
+                <Button asChild className="w-full">
+                  <Link
+                    href="https://podcastindex.org/podcast/3706972"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center bg-purple-700 text-white py-2 px-4 rounded-lg shadow-md"
+                  >
+                    Listen on Podcast Index
+                  </Link>
+                </Button>
+                <Button asChild className="w-full">
+                  <Link
+                    href="https://www.linkedin.com/company/women-in-stem-podcast/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center bg-blue-700 text-white py-2 px-4 rounded-lg shadow-md"
+                  >
+                    Follow on LinkedIn
+                  </Link>
+                </Button>
+              </div>
+            </section>
           </CardContent>
         </Card>
       </main>
