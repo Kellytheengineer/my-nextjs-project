@@ -25,12 +25,9 @@ const PodcastPage: React.FC = (): JSX.Element => {
           <CardContent className="p-6 bg-white rounded-lg">
             <h2 className="text-2xl font-bold mb-4">Women In STEM Podcast</h2>
             <p className="mb-4">
-              Welcome to the Women In STEM Podcast, a passion project dedicated to amplifying the voices of women in 
-              Science, Technology, Engineering, and Mathematics (STEM). Through inspiring discussions with a diverse 
-              lineup of speakers from around the globe, we explore topics ranging from career advancement to the 
-              challenges of balancing motherhood with a STEM career. As I pursue a full-stack role in tech, this 
-              podcast enhances my skills in web development, project management, and community engagement while 
-              promoting diversity in the industry.
+            Welcome to the Women In STEM Podcast, an award-winning passion project I created to amplify the voices of women in Science, Technology, Engineering, and Mathematics (STEM). Through insightful conversations with a global lineup of speakers, we delve into diverse topics, including career advancement, overcoming challenges in STEM.
+
+            As I pursue a full-stack development role in tech, this podcast has been a key driver in honing my web development, project management, and community-building skills. It not only allows me to showcase my technical expertise but also highlights my commitment to promoting diversity and inclusion within the industry. By bridging the gap between technology and storytelling, I continue to grow both as a developer and as an advocate for underrepresented voices in STEM.
             </p>
             <h3 className="text-xl font-bold mb-2">Recommended Episodes</h3>
             <ul className="list-disc list-inside mb-4">
